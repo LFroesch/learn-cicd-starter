@@ -35,7 +35,7 @@ jobs:
       - name: Run Migrations and take DB Env
         run: |
             echo "Starting migrations..."
-            goose -dir=migrations up
+            goose -dir=migrations turso "$DATABASE_URL" up
             echo "Migrations completed."
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
